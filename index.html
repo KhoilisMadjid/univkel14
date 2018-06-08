@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	  <meta charset="utf-8">
+	  <title>Prambanan</title>
+	  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+	  <meta content="" name="keywords">
+	  <meta content="" name="description">
+
+	  <link href="gaya.css" rel="stylesheet">
+	  <link rel="stylesheet" type="text/css" href="css/coin-slider.css" />
+
+	  <!-- Bootstrap CSS File percantik tata letak -->
+	  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+	  <!-- Libraries CSS Files menampilkan gambar(icon) -->
+	  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+	  <link href="lib/animate/animate.min.css" rel="stylesheet">
+
+	  <!-- Favicons -->
+	  <link href="img/favicon.png" rel="icon">
+	  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+	  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+		
+		<script>
+			var app = angular.module("myApp", ["ngRoute"]);
+			app.config(function($routeProvider) {
+				$routeProvider
+				.when("/", {
+					templateUrl : "path/main.html"
+				})
+				.when("/about", {
+					templateUrl : "path/about.html"
+				})
+				.when("/prodi", {
+					templateUrl : "path/prodi.html"
+				})
+				.when("/contact", {
+					templateUrl : "path/contact.html"
+				})
+				.when("/services", {
+					templateUrl : "path/service.html"
+				})
+				.when("/dosen", {
+					templateUrl : "path/dosen.html"
+				})
+				.when("/team", {
+					templateUrl : "path/team.html"
+				});
+			});
+		</script>
+	</head>
+	<body>
+
+	  <main id="main">
+			
+			<div ng-app="myApp">
+					
+				<div class="wrap">
+					<div ng-include="'path/header.html'"></div>
+					<div ng-view></div>			
+					<div ng-include="'path/footer.html'"></div>
+				</div>	
+
+			</div>
+		  
+	  </main>
+	</body>
+</html>
